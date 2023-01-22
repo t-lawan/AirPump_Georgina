@@ -4,9 +4,9 @@
 AirPump pump_in(12,3,9);
 AirPump pump_out(13,11,9);
 
-unsigned long breathe_in_delay = 10000;
-unsigned long breathe_out_delay = 10000;
-unsigned long break_delay = 5000;
+unsigned long breathe_in_delay = 10000; // 10 seconds
+unsigned long breathe_out_delay = 10000; // 10 seconds
+unsigned long break_delay = 5000; // delay in between breathing is 5 seconds
 
 void setup() {
   Serial.begin(9600);
@@ -32,14 +32,14 @@ void loop() {
 
 void breatheIn(){
     pump_in.on();
-  pump_out.off();
-  delay(breathe_in_delay);
+    pump_out.off();
+    delay(breathe_in_delay);
 }
 
 void breatheOut(){
-  pump_in.off();
-  pump_out.on();
-  delay(breathe_out_delay);
+    pump_in.off();
+    pump_out.on();
+    delay(breathe_out_delay);
 }
 
 void stopPumps(){
